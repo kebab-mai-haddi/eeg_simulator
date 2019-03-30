@@ -204,7 +204,11 @@ def alter_gmax():
 
     present_diff = abs(max_freq - calulated_max_freq)
     # our objective is to lessen the absolute difference.
-    print 'Need to Achive: ', max_freq, ' From: ', calulated_max_freq
+    print(
+        'Need to Achive: {}, From: {}'.format(
+            max_freq, calulated_max_freq
+        )
+    )
     # can change it to 0.5 for more accurancy, as of now, 1 diff is the threshold.
     while present_diff > 1:
 
@@ -315,15 +319,26 @@ def alter_gmax():
             vTCR, 1000, 'hanning', 500, scaling='spectrum')
         calulated_max_freq = f[list(Pxx_spec).index(max(Pxx_spec))]
         new_dis = abs(calulated_max_freq - max_freq)
-        print 'Old Distance: ', present_diff, 'New Distance: ', new_dis
+        print(
+            'Old Distance: {} New Distance: {}'.format(
+                present_diff, new_dis
+            )
+        )
         present_diff = new_dis
 
     print('Original g_max terms: ')
-    print "original_gAmpaTCRToTRN,original_gAmpaRetToIN,original_gAmpaRetToTCR,original_gGaba,original_gGabaInToTCR"
-    print original_gAmpaTCRToTRN, original_gAmpaRetToIN, original_gAmpaRetToTCR, original_gGaba, original_gGabaInToTCR
+    print (
+        "original_gAmpaTCRToTRN: {}, original_gAmpaRetToIN: {}, original_gAmpaRetToTCR: {},original_gGaba: {}, original_gGabaInToTCR: {}".format(
+            original_gAmpaTCRToTRN, original_gAmpaRetToIN, original_gAmpaRetToTCR, original_gGaba, original_gGabaInToTCR
+        )
+    )
     print('Altered g_max terms: ')
-    print "gAmpaTCRToTRN,gAmpaRetToIN,gAmpaRetToTCR,gGaba,gGabaInToTCR"
-    print gAmpaTCRToTRN, gAmpaRetToIN, gAmpaRetToTCR, gGaba, gGabaInToTCR
+    print(
+        "gAmpaTCRToTRN: {}, gAmpaRetToIN: {}, gAmpaRetToTCR: {}, gGaba: {}, gGabaInToTCR: {}".format(
+            gAmpaTCRToTRN, gAmpaRetToIN, gAmpaRetToTCR, gGaba, gGabaInToTCR
+        )
+    )
+    print 
     f, Pxx_spec = signal.welch(vTCR, 1000, 'hanning', 500, scaling='spectrum')
     plt.figure()
     plt.semilogy(f, Pxx_spec, linewidth=2.0)

@@ -1,12 +1,15 @@
 from __future__ import division
-from scipy.signal import butter, lfilter
+
+import datetime
+import math
+import time
+
+import numpy as np
+
 import matplotlib.pyplot as plt
 from scipy import signal
-import numpy as np
-import datetime
-import numpy
-import time
-import math
+from scipy.signal import butter, lfilter
+
 plt.style.use('ggplot')
 global tMax, tTCR, tTRN, tIN, vThr, sigma, rRetToTCR, rRetToIN, rInToTCR, r_TRN_to_TCR, T, timeList, iRetToTCR, iRetToIN, iInToTCR, iInToIn, i_TRN_to_TCR, i_TRN_to_TRN, betaAmpa, betaGaba, vTCR, vIN, iLeakTCR, iLeakIN, gAmpaRetToTCR, gAmpaRetToIN, gGabaInToTCR, EAmpa, EGaba, EGaba_TRN_or_IN_to_TCR, EGaba_TRN_to_TRN_or_IN_to_IN, cIRE, cTRE, cISI, cTII, cNSI, gLeakIN, gLeakTCR, ELeakIN, ELeakTCR, r_TCR_to_TRN, iLeakTRN, cTNI, gLeakTRN, ELeakTRN
 tTCR = [0] * 10000
