@@ -1,5 +1,5 @@
 In order to simulate EEG readings, no software exists which can run the Kinetic LGN model. 
-This python library will simulate implements the kinetic lgn model for simulating eeg models.
+This python library implements the kinetic lgn model for simulating eeg models.
 
 
 1. Run simulation via:
