@@ -1,5 +1,7 @@
-import matplotlib.pyplot as plt
 import numpy as np
+
+import matplotlib.pyplot as plt
+
 plt.style.use('ggplot')
 
 m_f = np.load('objects/simulation_model_freq.npy')[:50]
